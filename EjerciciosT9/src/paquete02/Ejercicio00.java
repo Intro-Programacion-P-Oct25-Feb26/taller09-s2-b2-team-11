@@ -40,10 +40,13 @@ public class Ejercicio00 {
 
         for (int i = 0; i < promediosMateria1.length; i++) {
 
-            mensajeFinal = String.format("%sEstudiante:%s - promedio final: "
+            mensajeFinal = String.format("%sEstudiante:%s,"
+                    + " materia 1: %s, materia 2: %s - promedio final: "
                     + "%.4f\n",
                     mensajeFinal,
                     estudiantes[i],
+                    promediosMateria1[i],
+                    promediosMateria2[i],
                     promediosFinales[i]);
         }
 
