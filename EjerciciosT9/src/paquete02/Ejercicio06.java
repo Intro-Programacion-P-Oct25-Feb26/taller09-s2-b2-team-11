@@ -16,7 +16,7 @@ public class Ejercicio06 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+public static void main(String[] args) {
       Scanner entrada = new Scanner(System.in);
       
       String[] cafes = new String[3];
@@ -37,7 +37,8 @@ public class Ejercicio06 {
         while(continuar) {
             System.out.println("\n MENÚ DE CAFÉS :");
             for(int i = 0; i < 3; i++) {
-                System.out.println((i+1) + ". " + cafes[i] + " - $" + precios[i]);
+                System.out.println((i+1) + ". " + cafes[i] + " - $" + 
+                        precios[i]);
             }
             System.out.println("4. Terminar pedido y pagar");
             
@@ -47,11 +48,13 @@ public class Ejercicio06 {
             if (opcion >= 1 && opcion <= 3) {
                 int indice = opcion - 1;
                 
-                System.out.print("Ingrese número de tazas de " + cafes[indice] + ": ");
+                System.out.print("Ingrese número de tazas de " + 
+                        cafes[indice] + ": ");
                 tazas = entrada.nextInt();
                 
                 subtotal_pedido = tazas * precios[indice];
-                System.out.println("Valor a pagar por este pedido: $" + subtotal_pedido);
+                System.out.println("Valor a pagar por este pedido: $" + 
+                        subtotal_pedido);
                 
                 cantidad_tazas[indice] = cantidad_tazas[indice] + tazas;
                 
@@ -63,7 +66,7 @@ public class Ejercicio06 {
         }
         
         
-        System.out.println("El usuario ha comprado:");
+        System.out.println("\nEl usuario ha comprado:\n");
         
         double total_general = 0;
         double valor_tipo = 0;
@@ -74,12 +77,14 @@ public class Ejercicio06 {
                 
                 total_general = total_general + valor_tipo;
                 
-                System.out.println(cafes[i] + " (" + cantidad_tazas[i]
-                        + " t), valor a cancelar $" + valor_tipo);
+                System.out.printf("%s (%s t), valor a cancelar %.1f\n",
+                        cafes[i],
+                        cantidad_tazas[i],
+                        valor_tipo);
             }
         }
         
-        System.out.println("Total a pagar%.1f: " + total_general);
+        System.out.printf("\nTotal a pagar: %.1f\n ", total_general);
     }
 }
 
